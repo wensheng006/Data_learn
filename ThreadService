@@ -41,6 +41,7 @@ public class ThreadService {
 				 executeThread.sleep(10);
 			} catch (Exception e) {
 				System.out.println("executeThread.sleep(10);");
+				break;
 			}
 		}
     	finished = false;
