@@ -2,26 +2,17 @@ package mytest;
 
 public class cycLinked {
 
-	// »·ĞÎÁ´±í
+	// ç¯å½¢é“¾è¡¨
 	public static void main(String[] args) {
 		CyclinedList cyclinedList = new CyclinedList();
 		cyclinedList.initBoys(5);
 		cyclinedList.showBoys();
 		cyclinedList.jumpBoys2(1, 2);
-		// ¼sÉª·ò†–î}
-    /*		
-         n¸öÈË(n<=100)Î§³ÉÒ»È¦,´ÓµÚÒ»¸öÈË¿ªÊ¼±¨Êı,Êıµ½mµÄÈË³öÁĞ,
-		ÔÙÓÉÏÂÒ»¸öÈËÖØĞÂ´Ó1¿ªÊ¼±¨Êı,Êıµ½mµÄÈËÔÙ³öÈ¦,¡­¡­ÒÀ´ÎÀàÍÆ,Ö±µ½ËùÓĞµÄÈË¶¼³öÈ¦,ÇëÊä³öÒÀ´Î³öÈ¦ÈËµÄ±àºÅ.
-		*/
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		// ç´„ç‘Ÿå¤«å•é¡Œ
+         /*		
+         nä¸ªäºº(n<=100)å›´æˆä¸€åœˆ,ä»ç¬¬ä¸€ä¸ªäººå¼€å§‹æŠ¥æ•°,æ•°åˆ°mçš„äººå‡ºåˆ—,
+		å†ç”±ä¸‹ä¸€ä¸ªäººé‡æ–°ä»1å¼€å§‹æŠ¥æ•°,æ•°åˆ°mçš„äººå†å‡ºåœˆ,â€¦â€¦ä¾æ¬¡ç±»æ¨,ç›´åˆ°æ‰€æœ‰çš„äººéƒ½å‡ºåœˆ,è¯·è¾“å‡ºä¾æ¬¡å‡ºåœˆäººçš„ç¼–å·.
+	 */
 	}
 
 }
@@ -31,7 +22,7 @@ class CyclinedList {
     Boy currBoy = null;
 
 	
-	// ³õÊ¼»¯Ğ¡º¢µÄ¸öÊı
+	// åˆå§‹åŒ–å°å­©çš„ä¸ªæ•°
 	public void initBoys(int  nums ) {
         if(nums < 1){
         	return;
@@ -54,27 +45,27 @@ class CyclinedList {
 	
 	/**
 	 * 
-	 * @param k Äké_Ê¼
-	 * @param m m‚€
+	 * @param k å¾ké–‹å§‹
+	 * @param m må€‹
 	 */
 	public void jumpBoys2(int k, int m) {
 		if(first ==null){
 			return;
 		}
 		Boy helper = first;
-		// helper  Îª ×îºóÒ»¸öboy
+		// helper  ä¸º æœ€åä¸€ä¸ªboy
 		while (true ) {
 			if(helper.next == first){
 				break;
 			}
 			helper = helper.next;
 		}
-		System.out.println("×îºóÒ»¸öboy Îª" + helper);
+		System.out.println("æœ€åä¸€ä¸ªboy ä¸º" + helper);
 		
 		
 		int tempk = 0 ;
 		int tempm = 0 ;
-		// boy Îª k µÄÇ°Ò»¸ö½Úµã
+		// boy ä¸º k çš„å‰ä¸€ä¸ªèŠ‚ç‚¹
 		while (true ) {
 			if((tempk + 1) == k){
 				break;
@@ -83,26 +74,26 @@ class CyclinedList {
 			helper = helper.next;
 		}
 		
-		// ´ËÊ±Ã¿ M ¸öÌø³öÒ»¸ö , Ö»ÓĞÒ»¸öboy ÊÇÍ£Ö¹Ñ­»·
+		// æ­¤æ—¶æ¯ M ä¸ªè·³å‡ºä¸€ä¸ª , åªæœ‰ä¸€ä¸ªboy æ˜¯åœæ­¢å¾ªç¯
 		while (helper.next != helper) {
 			helper = helper.next; 
 			tempm ++;
 			if(m == (tempm+1) ){
-				// ½«´Ë boy Ìø³ö
-				System.out.println("Ìø³öboy ±àºÅ  : " + helper.next);
+				// å°†æ­¤ boy è·³å‡º
+				System.out.println("è·³å‡ºboy ç¼–å·  : " + helper.next);
 				helper.next = 	helper.next.next ;
 				tempm = 0;
 			}
 		}
-		System.out.println("×îºóÒ»¸öboy ÊÇ :" + helper);
+		System.out.println("æœ€åä¸€ä¸ªboy æ˜¯ :" + helper);
 		
 		
 	}
 	
 	/**
 	 * 
-	 * @param k Äké_Ê¼
-	 * @param m m‚€
+	 * @param k å¾ké–‹å§‹
+	 * @param m må€‹
 	 */
 	public void jumpBoys(int k, int m) {
 		if(first ==null){
@@ -113,7 +104,7 @@ class CyclinedList {
 		int tempk = 0 ;
 		int tempm = 0 ;
       
-		// boy Îª k µÄÇ°Ò»¸ö½Úµã
+		// boy ä¸º k çš„å‰ä¸€ä¸ªèŠ‚ç‚¹
 		while (boy.next != first ) {
 			if((boy.no + 1) == k){
 				break;
@@ -121,20 +112,20 @@ class CyclinedList {
 			tempk ++;
 			boy = boy.next;
 		}
-		System.out.println("k µÄÇ°Ò»¸öboy Îª" +boy);
+		System.out.println("k çš„å‰ä¸€ä¸ªboy ä¸º" +boy);
 		
-		// ´ËÊ±Ã¿ M ¸öÌø³öÒ»¸ö , Ö»ÓĞÒ»¸öboy ÊÇÍ£Ö¹Ñ­»·
+		// æ­¤æ—¶æ¯ M ä¸ªè·³å‡ºä¸€ä¸ª , åªæœ‰ä¸€ä¸ªboy æ˜¯åœæ­¢å¾ªç¯
 		while (boy.next != boy) {
 			boy = boy.next; 
 			tempm ++;
 			if(m == (tempm+1) ){
-				// ½«´Ë boy Ìø³ö
-				System.out.println("Ìø³öboy ±àºÅ  : " + boy.next);
+				// å°†æ­¤ boy è·³å‡º
+				System.out.println("è·³å‡ºboy ç¼–å·  : " + boy.next);
 				boy.next = 	boy.next.next ;
 				tempm = 0;
 			}
 		}
-		System.out.println("×îºóÒ»¸öboy ÊÇ :" + boy);
+		System.out.println("æœ€åä¸€ä¸ªboy æ˜¯ :" + boy);
 		
 		
 	}
